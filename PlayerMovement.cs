@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     {
         var targetSpeed = speed * moveInput.magnitude;
         //moveInput.y : Vertical 이동값, moveInput.x : Horizontal 이동값
-        var moveDirection = Vector3.Normalize(followCam.transform.forward * moveInput.y + followCam.transform.right * moveInput.x);
+        var moveDirection = Vector3.Normalize(transform.forward * moveInput.y + transform.right * moveInput.x);
         
         //공중에서와 지상에서의 이동 차이점
         var smoothTime = characterController.isGrounded ? speedSmoothTime : speedSmoothTime / airControlPercent;
